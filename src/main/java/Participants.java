@@ -3,6 +3,8 @@ public interface Participants {
 
     int getDistance();
     double getHeight();
+    boolean getFlag();
+    void setFlag(boolean flag);
 
 
     String running();

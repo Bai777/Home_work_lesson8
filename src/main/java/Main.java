@@ -13,13 +13,16 @@ public class Main {
         Obstacles[] obstacles = {
           new Treadmill(200),
           new Treadmill(1500),
-          new Wall(1.5),
-          new Wall(14)
+          new Wall(14),
+          new Wall(1.5)
         };
 
         for (int i = 0; i < obstacles.length; i++) {
             for (Participants participant : participants) {
+                if (participant.getFlag()) {
                     System.out.println(obstacles[i].check(participant));
+                }
+
             }
         }
 

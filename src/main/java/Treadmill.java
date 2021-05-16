@@ -9,9 +9,14 @@ public class Treadmill implements Obstacles{
     @Override
     public String check(Participants participant) {
         System.out.println(participant.running());
-        if (participant.getDistance() >= distanceTreadmill)
-        return "Participant " + participant.getName() + " walked the distance: " + distanceTreadmill;
-        else
+        participant.setFlag(participant.getDistance() >= distanceTreadmill);
+        if (participant.getFlag()) {
+            participant.setFlag(true);
+            return "Participant " + participant.getName() + " walked the distance: " + distanceTreadmill;
+        }
+        else {
+            participant.setFlag(false);
             return "Participant " + participant.getName() + " no walked the distance: " + distanceTreadmill;
+        }
     }
 }

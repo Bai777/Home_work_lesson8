@@ -3,6 +3,17 @@ public class Human implements Participants {
     private String name;
     private int distance;
     private double height;
+    private boolean flag = true;
+
+
+    public boolean getFlag() {
+        return flag;
+    }
+
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
 
     public Human(String name, int distance, double height) {

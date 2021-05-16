@@ -1,4 +1,4 @@
-public class Wall implements Obstacles{
+public class Wall implements Obstacles {
     double heightWall;
 
     public Wall(double heightWall) {
@@ -9,9 +9,14 @@ public class Wall implements Obstacles{
     @Override
     public String check(Participants participant) {
         System.out.println(participant.jumping());
-        if(participant.getHeight() >= heightWall)
+
+        participant.setFlag(participant.getHeight() >= heightWall);
+        if (participant.getFlag()) {
+            participant.setFlag(true);
             return "Participant " + participant.getName() + " takes the height: " + heightWall;
-        else
+        } else {
+            participant.setFlag(false);
             return "Participant " + participant.getName() + " no takes the height: " + heightWall;
+        }
     }
 }
